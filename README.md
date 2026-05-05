@@ -1,14 +1,23 @@
-# MongoDB 20 Days Challenge 🚀
+# MongoDB 20 Days Challenge 
 
-## Day 1: Introduction to MongoDB
+##  About This Project
+This repository contains my 20-day journey of learning MongoDB from basic to advanced.
 
-Today I learned:
+##  Goal
+To build a strong understanding of MongoDB and practice real-world queries.
 
+## Progress
+- Day 1 Introduction to MongoDB
+
+##  Topics Covered (Day 1)
 - What is MongoDB
-- Features of MongoDB
+- Features
 - Applications
 - Language Support
 - Working of MongoDB
 
-### Key Points:
-MongoDB is a NoSQL database that stores data in a flexible, schema-less format, making it powerful for modern applications.
+## Why I’m Doing This
+I am documenting my learning publicly to stay consistent and improve my database skills.
+
+##  Next
+Day 2: Basic of Mongodb and CRUD Operations.
