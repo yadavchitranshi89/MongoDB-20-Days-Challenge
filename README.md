@@ -19,5 +19,10 @@ To build a strong understanding of MongoDB and practice real-world queries.
 ## Why I’m Doing This
 I am documenting my learning publicly to stay consistent and improve my database skills.
 
-##  Next
-Day 2: Basic of Mongodb and CRUD Operations.
+
+## Day 2: CRUD Operations in MongoDB
+### Topics Covered:
+- Database creation and switching
+- Collection operations
+- CRUD operations (Create, Read, Update, Delete)
+
