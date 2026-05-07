@@ -1,4 +1,4 @@
-//Query Operators
+//Query Operators with 50 questions
 //Collection: students
 db.students.insertMany([
   {
