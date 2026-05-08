@@ -132,7 +132,7 @@ A Students collection with fields:
 
 ---
 
-## Day 3 – MongoDB Practice (Update & Array Operators)
+## Day 4 – MongoDB Update Operators
 ## Overview
 On Day 3 of my MongoDB learning journey, I focused on mastering advanced update operations, especially array update operators used in real-world database manipulation.This day was fully hands-on with query writing and problem-solving.
 ---
