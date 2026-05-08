@@ -134,8 +134,11 @@ A Students collection with fields:
 
 ## Day 4 – MongoDB Update Operators
 ## Overview
+
 On Day 3 of my MongoDB learning journey, I focused on mastering advanced update operations, especially array update operators used in real-world database manipulation.This day was fully hands-on with query writing and problem-solving.
+
 ---
+
 ## Topics Covered
 ## Field Update Operators
 $set → update or add fields
@@ -148,7 +151,6 @@ $max → update if value is larger
 $currentDate → add timestamp
 $setOnInsert → insert-only updates (with upsert)
 
----
 
 ## Array Update Operators
 $push → add elements to array
@@ -157,7 +159,6 @@ $pull → remove specific elements
 $pullAll → remove multiple values
 $pop → remove first/last element
 
----
 ##  Array Modifiers
 $each → insert multiple values
 $position → insert at specific index
@@ -170,7 +171,6 @@ user profile fields (age, city, status)
 Solved 40+ interview-style MongoDB questions
 Practiced both single and multiple operator queries
 
----
 
 ## Key Learnings
 MongoDB update operators allow powerful in-place modifications
