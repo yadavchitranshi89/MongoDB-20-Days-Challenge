@@ -25,10 +25,11 @@ To master MongoDB and strengthen backend development fundamentals by:
 
 - [x] Day 1: Databases & Collections
 - [x] Day 2: CRUD Operations
-- [ ] Day 3: Query Operators
-- [ ] Day 4: Advanced Queries
-- [ ] Day 5: Indexing Basics
-- [ ] Day 6–20: Advanced MongoDB Concepts
+- [x] Day 3: Query Operators
+- [x] Day 4: Update Operators
+- [ ] Day 5: Aggregation 
+- [ ] Day 6: Indexing Basics
+- [ ] Day 7–20: Advanced MongoDB Concepts
 
 ---
 
