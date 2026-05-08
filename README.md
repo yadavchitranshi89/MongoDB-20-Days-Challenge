@@ -166,32 +166,32 @@ On Day 3 of my MongoDB learning journey, I focused on mastering advanced update 
 - $sort → sort arrays after insertion
 
 ## Practice Work
-1)Created students and users collection with sample data
-2)Performed multiple update operations on:skills array and hobbies array using users collection.
-3)user profile fields (age, city, status)
-4)Solved 40+ interview-style MongoDB questions
-5)Practiced both single and multiple operator queries
+1) Created students and users collection with sample data.
+2) Performed multiple update operations on:skills array and hobbies array using users collection.
+3) user profile fields (age, city, status).
+4) Solved 40+ interview-style MongoDB questions.
+5) Practiced both single and multiple operator queries.
 
 
 ## Key Learnings
-1)MongoDB update operators allow powerful in-place modifications
-2)$addToSet prevents duplicates in arrays
-3)$pop removes elements only from start/end
-4)Complex updates require understanding operator combinations
-5)Some operations require careful choice between $push vs $addToSet
+1) MongoDB update operators allow powerful in-place modifications.
+2) $addToSet prevents duplicates in arrays.
+3) $pop removes elements only from start/end.
+4) Complex updates require understanding operator combinations.
+5) Some operations require careful choice between $push vs $addToSet.
 
 ---
 
 ## Outcome
 
 - By the end of Day 3, I am able to:
-- Write complex MongoDB update queries confidently
-- Handle array-based transformations
-- Solve interview-level CRUD problems
-- Understand operator limitations and best usage patterns
+- Write complex MongoDB update queries confidently.
+- Handle array-based transformations.
+- Solve interview-level CRUD problems.
+- Understand operator limitations and best usage patterns.
 
 ##  Future Plan
-- Learn Query Operators
+- Learn Query Operators.
 - Learn Indexing & Performance Optimization
 - Learn Aggregation Framework
 - Work on MongoDB mini-project
