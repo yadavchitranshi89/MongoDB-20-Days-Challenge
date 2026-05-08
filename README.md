@@ -141,53 +141,53 @@ On Day 3 of my MongoDB learning journey, I focused on mastering advanced update 
 
 ## Topics Covered
 ## Field Update Operators
-$set → update or add fields
-$unset → remove fields
-$rename → rename fields
-$inc → increment numeric values
-$mul → multiply numeric values
-$min → update if value is smaller
-$max → update if value is larger
-$currentDate → add timestamp
-$setOnInsert → insert-only updates (with upsert)
+- $set → update or add fields
+- $unset → remove fields
+- $rename → rename fields
+- $inc → increment numeric values
+- $mul → multiply numeric values
+- $min → update if value is smaller
+- $max → update if value is larger
+- $currentDate → add timestamp
+- $setOnInsert → insert-only updates (with upsert)
 
 
 ## Array Update Operators
-$push → add elements to array
-$addToSet → add unique elements
-$pull → remove specific elements
-$pullAll → remove multiple values
-$pop → remove first/last element
+- $push → add elements to array
+- $addToSet → add unique elements
+- $pull → remove specific elements
+- $pullAll → remove multiple values
+- $pop → remove first/last element
 
 ##  Array Modifiers
-$each → insert multiple values
-$position → insert at specific index
-$sort → sort arrays after insertion
+- $each → insert multiple values
+- $position → insert at specific index
+- $sort → sort arrays after insertion
 
 ## Practice Work
-Created students and users collection with sample data
-Performed multiple update operations on:skills array and hobbies array using users collection.
-user profile fields (age, city, status)
-Solved 40+ interview-style MongoDB questions
-Practiced both single and multiple operator queries
+1)Created students and users collection with sample data
+2)Performed multiple update operations on:skills array and hobbies array using users collection.
+3)user profile fields (age, city, status)
+4)Solved 40+ interview-style MongoDB questions
+5)Practiced both single and multiple operator queries
 
 
 ## Key Learnings
-MongoDB update operators allow powerful in-place modifications
-$addToSet prevents duplicates in arrays
-$pop removes elements only from start/end
-Complex updates require understanding operator combinations
-Some operations require careful choice between $push vs $addToSet
+1)MongoDB update operators allow powerful in-place modifications
+2)$addToSet prevents duplicates in arrays
+3)$pop removes elements only from start/end
+4)Complex updates require understanding operator combinations
+5)Some operations require careful choice between $push vs $addToSet
 
 ---
 
 ## Outcome
 
-By the end of Day 3, I am able to:
-Write complex MongoDB update queries confidently
-Handle array-based transformations
-Solve interview-level CRUD problems
-Understand operator limitations and best usage patterns
+- By the end of Day 3, I am able to:
+- Write complex MongoDB update queries confidently
+- Handle array-based transformations
+- Solve interview-level CRUD problems
+- Understand operator limitations and best usage patterns
 
 ##  Future Plan
 - Learn Query Operators
