@@ -27,9 +27,10 @@ To master MongoDB and strengthen backend development fundamentals by:
 - [x] Day 2: CRUD Operations
 - [x] Day 3: Query Operators
 - [x] Day 4: Update Operators
-- [ ] Day 5: Aggregation 
-- [ ] Day 6: Indexing Basics
-- [ ] Day 7–20: Advanced MongoDB Concepts
+- [x] Day 5: Single Purpose Aggregation Methods
+- [ ] Day 6: Aggregation Pipelines
+- [ ] Day 7: Indexing Basics
+- [ ] Day 8–20: Advanced MongoDB Concepts
 
 ---
 
@@ -208,7 +209,7 @@ Single Purpose Aggregation Methods are simple MongoDB methods used for counting 
 - Found unique values from fields.
 - Practiced queries using filters and regex.
 - Solved 20 practice questions.
-- 
+
 ---
 ##  Future Plan
 - Learn Query Operators.
