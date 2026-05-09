@@ -190,6 +190,26 @@ On Day 3 of my MongoDB learning journey, I focused on mastering advanced update 
 - Solve interview-level CRUD problems.
 - Understand operator limitations and best usage patterns.
 
+ ---
+
+ ## Day 5 - Single Purpose Aggregation Methods
+
+Today I learned Single Purpose Aggregation Methods in MongoDB.
+Single Purpose Aggregation Methods are simple MongoDB methods used for counting documents and finding unique values.
+
+### Methods Used
+- countDocuments() → Used to count documents matching a condition.
+- estimatedDocumentCount() → Used to estimate total documents in a collection.
+- distinct() → Used to find unique values from a field.
+
+### What I Did
+- Counted documents using conditions.
+- Estimated total documents in collections.
+- Found unique values from fields.
+- Practiced queries using filters and regex.
+- Solved 20 practice questions.
+- 
+---
 ##  Future Plan
 - Learn Query Operators.
 - Learn Indexing & Performance Optimization
