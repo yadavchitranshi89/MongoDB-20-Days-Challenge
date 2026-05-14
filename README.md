@@ -28,9 +28,9 @@ To master MongoDB and strengthen backend development fundamentals by:
 - [x] Day 3: Query Operators
 - [x] Day 4: Update Operators
 - [x] Day 5: Single Purpose Aggregation Methods
-- [ ] Day 6: Aggregation Pipelines
-- [ ] Day 7: Indexing Basics
-- [ ] Day 8–20: Advanced MongoDB Concepts
+- [x] Day 6-9: Aggregation Pipelines basic& advanced
+- [ ] Day 10: Indexing 
+- [ ] Day 11–20: Advanced MongoDB Concepts
 
 ---
 
