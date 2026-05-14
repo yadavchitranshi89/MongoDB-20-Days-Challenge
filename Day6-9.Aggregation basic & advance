@@ -1,0 +1,717 @@
+// BASIC AGGREGATION PIPELINE STAGES
+db.employees.insertMany([
+{
+ name:"Amit",
+ age:24,
+ department:"IT",
+ salary:50000,
+ skills:["JavaScript","React"],
+ joiningDate:new Date("2022-05-10")
+},
+{
+ name:"Rahul",
+ age:26,
+ department:"HR",
+ salary:45000,
+ skills:["Communication","Management"],
+ joiningDate:new Date("2021-08-15")
+},
+{
+ name:"Neha",
+ age:25,
+ department:"Finance",
+ salary:60000,
+ skills:["Excel","Accounting"],
+ joiningDate:new Date("2023-01-20")
+},
+{
+ name:"Priya",
+ age:27,
+ department:"IT",
+ salary:70000,
+ skills:["NodeJS","MongoDB"],
+ joiningDate:new Date("2020-11-12")
+},
+{
+ name:"Karan",
+ age:23,
+ department:"HR",
+ salary:40000,
+ skills:["Recruitment","Communication"],
+ joiningDate:new Date("2024-03-01")
+}
+])
+
+//1. Find all employees using $match
+db.employees.aggregate([
+{
+ $match:{}
+}
+])
+
+//2. Find employees whose salary is greater than 50000
+db.employees.aggregate([
+{
+ $match:{
+   salary:{$gt:50000}
+ }
+}
+])
+
+//3.Find employees from IT department
+db.employees.aggregate([
+{
+ $match:{
+   department:"IT"
+ }
+}
+])
+
+//4. Find employees whose age is less than 25
+db.employees.aggregate([
+{
+ $match:{
+   age:{$lt:25}
+ }
+}
+])
+
+//5. Find employees whose salary is between 40000 and 60000
+db.employees.aggregate([
+{
+ $match:{
+   salary:{
+     $gte:40000,
+     $lte:60000
+   }
+ }
+}
+])
+
+//6. Display only name and salary using $project
+db.employees.aggregate([
+{
+ $project:{
+   name:1,
+   salary:1,
+   _id:0
+ }
+}
+])
+
+//7.Hide _id field using $project
+db.employees.aggregate([
+{
+ $project:{
+   _id:0
+ }
+}
+])
+
+//8.Create annual salary field using $project
+db.employees.aggregate([
+{
+ $project:{
+   name:1,
+   annualSalary:{
+     $multiply:["$salary",12]
+   }
+ }
+}
+])
+//9. Rename salary field to employeeSalary using $project
+db.employees.aggregate([
+{
+ $project:{
+   name:1,
+   employeeSalary:"$salary",
+   _id:0
+ }
+}
+])
+
+//10. Find employees sorted by salary ascending
+db.employees.aggregate([
+{
+ $sort:{
+   salary:1
+ }
+}
+])
+
+//11. Find employees sorted by salary descending
+db.employees.aggregate([
+{
+ $sort:{
+   salary:-1
+ }
+}
+])
+
+//12 Sort employees by age and salary together
+db.employees.aggregate([
+{
+ $sort:{
+   age:1,
+   salary:-1
+ }
+}
+])
+
+//13 .Display first 3 employees using $limit
+db.employees.aggregate([
+{
+ $limit:3
+}
+])
+
+//14. Skip first 2 employees using $skip
+db.employees.aggregate([
+{
+ $skip:2
+}
+])
+
+//15. Find top 2 highest salary employees
+db.employees.aggregate([
+{
+ $sort:{
+   salary:-1
+ }
+},
+{
+ $limit:2
+}
+])
+
+//16. Count total employees using $count
+db.employees.aggregate([
+{
+ $count:"totalEmployees"
+}
+])
+
+//17. Group employees department-wise using $group
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department"
+ }
+}
+])
+
+//18. Find total salary department-wise
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   totalSalary:{
+     $sum:"$salary"
+   }
+ }
+}
+])
+
+//19. Find average salary department-wise
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   averageSalary:{
+     $avg:"$salary"
+   }
+ }
+}
+])
+
+//20. Find maximum salary department-wise
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   maximumSalary:{
+     $max:"$salary"
+   }
+ }
+}
+])
+
+//Aggregation Accumulators
+
+db.employees.insertMany([
+  {
+    name: "Amit",
+    department: "IT",
+    salary: 50000,
+    age: 24
+  },
+  {
+    name: "Rahul",
+    department: "IT",
+    salary: 60000,
+    age: 26
+  },
+  {
+    name: "Neha",
+    department: "HR",
+    salary: 45000,
+    age: 25
+  },
+  {
+    name: "Priya",
+    department: "HR",
+    salary: 55000,
+    age: 27
+  },
+  {
+    name: "Karan",
+    department: "Finance",
+    salary: 70000,
+    age: 30
+  }
+])
+
+//21.Find the total salary of all employees department-wise using $sum. 
+db.employees.aggregate([
+  {
+    $group: {
+      _id: "$department",
+      totalSalary: { $sum: "$salary" }
+    } }
+])
+
+//22.Find the average salary department-wise using $avg 
+db.employees.aggregate([
+  {
+    $group: {
+      _id: "$department",
+      averageSalary: { $avg: "$salary" }
+    } }
+])
+//23.Find the highest salary department-wise using $max. 
+db.employees.aggregate([
+{
+ $group:{ _id:"$department", highestsalary:{$max:"$salary"}}
+}])
+
+//24.Find the minimum salary department-wise using $min 
+db.employees.aggregate([
+{
+ $group:{ _id:"$department", minimumsalary:{$min:"$salary"}}
+}])
+
+//25. Count employees department-wise using $sum
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   totalEmployees:{$sum:1}
+ }
+}
+])
+
+Q26 — Store all employee names department-wise using $push
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   employeeNames:{$push:"$name"}
+ }
+}
+])
+
+//27. Store unique ages department-wise using $addToSet
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   uniqueAges:{$addToSet:"$age"}
+ }
+}
+])
+
+//28.  Find the first employee name department-wise using $first
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   firstEmployee:{$first:"$name"}
+ }
+}
+])
+
+//29. Find the last employee name department-wise using $last
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   lastEmployee:{$last:"$name"}
+ }
+}
+])
+
+//30.Find total employees using $count
+db.employees.aggregate([
+{
+ $count:"totalEmployees"
+}
+])
+
+//31. Find total salary and average salary together department-wise
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   totalSalary:{$sum:"$salary"},
+   averageSalary:{$avg:"$salary"}
+ }
+}
+])
+
+//32. Find departments having total salary greater than 100000
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   totalSalary:{$sum:"$salary"}
+ }
+},
+{
+ $match:{
+   totalSalary:{$gt:100000}
+ }
+}
+])
+
+//33. Find all employee names and total salary department-wise
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   employeeNames:{$push:"$name"},
+   totalSalary:{$sum:"$salary"}
+ }
+}
+])
+
+//34.Find maximum and minimum age department-wise
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   maximumAge:{$max:"$age"},
+   minimumAge:{$min:"$age"}
+ }
+}
+])
+
+//35. Find departments having more than 1 employee
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   totalEmployees:{$sum:1}
+ }
+},
+{
+ $match:{
+   totalEmployees:{$gt:1}
+ }
+}
+])
+
+//36. Find all unique departments using $addToSet
+db.employees.aggregate([
+{
+ $group:{
+   _id:null,
+   departments:{$addToSet:"$department"}
+ }
+}
+])
+
+//37. Find total salary of employees whose age is greater than 25
+db.employees.aggregate([
+{
+ $match:{
+   age:{$gt:25}
+ }
+},
+{
+ $group:{
+   _id:null,
+   totalSalary:{$sum:"$salary"}
+ }
+}
+])
+
+//38.Find average age of all employees
+db.employees.aggregate([
+{
+ $group:{
+   _id:null,
+   averageAge:{$avg:"$age"}
+ }
+}])
+
+//39.Find first and last salary department-wise
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   firstSalary:{$first:"$salary"},
+   lastSalary:{$last:"$salary"}
+ }
+}
+])
+
+//40.Find total number of departments
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department"
+ }
+},
+{
+ $count:"totalDepartments"
+}
+])
+
+// ADVANCED AGGREGATION STAGES
+
+//41. Use $lookup to join employees with departments collection
+db.employees.aggregate([
+{
+ $lookup:{
+   from:"departments",
+   localField:"departmentId",
+   foreignField:"_id",
+   as:"departmentDetails"
+ }
+}
+])
+
+//42. Use $graphLookup to find employee hierarchy
+db.employees.aggregate([
+{
+ $graphLookup:{
+   from:"employees",
+   startWith:"$managerId",
+   connectFromField:"managerId",
+   connectToField:"_id",
+   as:"hierarchy"
+ }
+}
+])
+
+//43.  Use $facet to get high salary and low salary employees together
+db.employees.aggregate([
+{
+ $facet:{
+   highSalary:[
+     {$match:{salary:{$gt:50000}}}
+   ],
+   lowSalary:[
+     {$match:{salary:{$lte:50000}}}
+   ]
+ }
+}
+])
+
+//44. Use $bucket to group employees by age ranges
+db.employees.aggregate([
+{
+ $bucket:{
+   groupBy:"$age",
+   boundaries:[20,25,30,35],
+   default:"Other",
+   output:{
+     count:{$sum:1}
+   }
+ }
+}
+])
+
+//45. Use $bucketAuto to create automatic salary groups
+db.employees.aggregate([
+{
+ $bucketAuto:{
+   groupBy:"$salary",
+   buckets:3,
+   output:{
+     count:{$sum:1}
+   }
+ }
+}
+])
+
+//46. Use $unionWith to combine employees and archivedEmployees collections
+db.employees.aggregate([
+{
+ $unionWith:{
+   coll:"archivedEmployees"
+ }
+}
+])
+
+//47. Use $setWindowFields to rank employees by salary
+db.employees.aggregate([
+{
+ $setWindowFields:{
+   sortBy:{salary:-1},
+   output:{
+     rank:{
+       $rank:{}
+     }
+   }
+ }
+}
+])
+
+//48. Use $merge to store aggregation result into summary collection
+db.employees.aggregate([
+{
+ $group:{
+   _id:"$department",
+   totalSalary:{$sum:"$salary"}
+ }
+},
+{
+ $merge:{
+   into:"salarySummary"
+ }
+}
+])
+
+//49.  Use $out to export employees data into backup collection
+db.employees.aggregate([
+{
+ $match:{salary:{$gt:50000}}
+},
+{
+ $out:"highSalaryEmployees"
+}
+])
+
+//50.Use $redact to allow only admin documents
+db.employees.aggregate([
+{
+ $redact:{
+   $cond:{
+     if:{$eq:["$role","admin"]},
+     then:"$$KEEP",
+     else:"$$PRUNE"
+   }
+ }
+}
+])
+
+//51. Use $densify to fill missing dates
+db.sales.aggregate([
+{
+ $densify:{
+   field:"date",
+   range:{
+     step:1,
+     unit:"day",
+     bounds:"full"
+   }
+ }
+}
+])
+
+//52.Use $fill to replace missing salary values
+db.employees.aggregate([
+{
+ $fill:{
+   output:{
+     salary:{
+       method:"locf"
+     }
+   }
+ }
+}
+])
+
+//53. Use $search to search employee names
+db.employees.aggregate([
+{
+ $search:{
+   index:"default",
+   text:{
+     query:"Amit",
+     path:"name"
+   }
+ }
+}
+])
+
+//54. Use $searchMeta to get metadata of search results
+db.employees.aggregate([
+{
+ $searchMeta:{
+   index:"default",
+   text:{
+     query:"Amit",
+     path:"name"
+   }
+ }
+}
+])
+
+//55.Use $documents to create inline documents
+db.aggregate([
+{
+ $documents:[
+   {name:"Amit",salary:50000},
+   {name:"Rahul",salary:60000}
+ ]
+}
+])
+
+//56. Use $currentOp to view running operations
+db.aggregate([
+{
+ $currentOp:{
+   allUsers:true
+ }
+}
+])
+
+//57.Use $collStats to get collection statistics
+db.employees.aggregate([
+{
+ $collStats:{
+   storageStats:{}
+ }
+}
+])
+
+//58.Use $indexStats to check index usage
+db.employees.aggregate([
+{
+ $indexStats:{}
+}
+])
+
+//59.Use $planCacheStats to view cached query plans
+db.employees.aggregate([
+{
+ $planCacheStats:{}
+}
+])
+
+//60.Use $listSessions to list active sessions
+db.aggregate([
+{
+ $listSessions:{}
+}
+])
+
+//61.Use $listLocalSessions to list local active sessions
+db.aggregate([
+{
+ $listLocalSessions:{}
+}
+])
+
