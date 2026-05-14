@@ -211,6 +211,105 @@ Single Purpose Aggregation Methods are simple MongoDB methods used for counting 
 - Solved 20 practice questions.
 
 ---
+
+# Day 6-9 MongoDB Aggregation Complete 
+
+This repository contains my complete learning and practice of MongoDB Aggregation Framework, including:
+
+* Basic Aggregation Stages
+* Advanced Aggregation Stages
+* Aggregation Accumulators
+* Practice Questions
+* Real Query Examples
+* Interview-Oriented Concepts
+
+---
+
+# Topics Covered
+
+## Basic Aggregation Stages
+
+* `$match`
+* `$project`
+* `$group`
+* `$sort`
+* `$limit`
+* `$skip`
+* `$count`
+* `$unwind`
+* `$addFields`
+* `$unset`
+* `$replaceRoot`
+
+---
+
+## Advanced Aggregation Stages
+
+* `$lookup`
+* `$graphLookup`
+* `$facet`
+* `$bucket`
+* `$bucketAuto`
+* `$unionWith`
+* `$setWindowFields`
+* `$merge`
+* `$out`
+* `$redact`
+* `$densify`
+* `$fill`
+* `$search`
+* `$searchMeta`
+* `$documents`
+* `$currentOp`
+* `$collStats`
+* `$indexStats`
+* `$planCacheStats`
+* `$listSessions`
+* `$listLocalSessions`
+
+---
+
+# Aggregation Accumulators
+
+* `$sum`
+* `$avg`
+* `$min`
+* `$max`
+* `$push`
+* `$addToSet`
+* `$first`
+* `$last`
+* `$count`
+* `$stdDevPop`
+* `$stdDevSamp`
+* `$top`
+* `$topN`
+* `$bottom`
+* `$bottomN`
+* `$firstN`
+* `$lastN`
+* `$maxN`
+* `$minN`
+
+---
+
+# Practice Included
+
+* Aggregation pipeline questions
+* Accumulator practice questions
+* Advanced stage examples
+* Interview-style queries
+* Real dataset examples
+* Solved 60 questions on aggregations 
+---
+
+# Tech Stack
+
+* MongoDB
+* Mongo Shell
+* Aggregation Framework
+---
+
 ##  Future Plan
 - Learn Query Operators.
 - Learn Indexing & Performance Optimization
@@ -218,7 +317,6 @@ Single Purpose Aggregation Methods are simple MongoDB methods used for counting 
 - Work on MongoDB mini-project
 
 ---
-
 ##  Why This Project?
 This is a part of my consistent learning journey to improve my backend development skills and become job-ready in software development.
 
